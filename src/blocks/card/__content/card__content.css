@@ -1,0 +1,8 @@
+.card__content {
+  padding: 25px 20px 31px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+}

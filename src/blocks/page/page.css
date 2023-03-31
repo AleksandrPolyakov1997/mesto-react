@@ -1,0 +1,8 @@
+.page {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  color: #fff;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
