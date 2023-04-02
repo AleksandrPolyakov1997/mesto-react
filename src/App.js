@@ -71,6 +71,7 @@ function App() {
           name='edit-profile'
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
+          buttonText='Сохранить'
         >
           <input
             className="popup__input popup__input_form_name"
@@ -90,9 +91,6 @@ function App() {
             required
             placeholder="О себе" />
           <span className="popup__error job-error"></span>
-          <button className="popup__button-save" type="submit">
-            Сохранить
-          </button>
         </PopupWithForm>
 
         <PopupWithForm
@@ -100,6 +98,7 @@ function App() {
           name='new-card'
           isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
+          buttonText='Сохранить'
         >
           <input
             className="popup__input popup__input_form_name"
@@ -119,9 +118,6 @@ function App() {
             required
             placeholder="О себе" />
           <span className="popup__error job-error"></span>
-          <button className="popup__button-save" type="submit">
-            Сохранить
-          </button>
         </PopupWithForm>
 
         <PopupWithForm
@@ -129,6 +125,7 @@ function App() {
           name='edit-avatar'
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
+          buttonText='Сохранить'
         >
           <input
             className="popup__input popup__input_form_image"
@@ -137,9 +134,6 @@ function App() {
             placeholder="Ссылкка на картинку"
             required />
           <span className="popup__error avatar-error"></span>
-          <button className="popup__button-save popup__button-save_invalid" type="submit" disabled>
-            Сохранить
-          </button>
         </PopupWithForm>
 
         <ImagePopup 
