@@ -24,7 +24,7 @@ class Api {
       headers: this._headers,
       body: JSON.stringify({
         name: data.name,
-        about: data.job
+        about: data.about
       })
     })
     .then(res => this._getResponseData(res));
@@ -78,10 +78,18 @@ class Api {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        avatar: link.avatar
+        avatar: link
       })
     })
     .then(res => this._getResponseData(res));
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this.addLike(cardId);
+    } else {
+      return this.deleteLike(cardId);
+    }
   }
 }
 

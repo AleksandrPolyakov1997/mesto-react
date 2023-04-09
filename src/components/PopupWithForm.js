@@ -1,6 +1,6 @@
 import React from "react";
 
-function PopupWithForm({ title, name, isOpen, onClose, children, buttonText}) {
+function PopupWithForm({ title, name, isOpen, onClose, children, buttonText, onSubmit}) {
   return (
     <section className={`popup popup_${name} ${isOpen ? 'popup_open' : ''}`}>
       <div className="popup__content">
@@ -12,9 +12,9 @@ function PopupWithForm({ title, name, isOpen, onClose, children, buttonText}) {
         <h2 className="popup__title">
           {title}
         </h2>
-        <form className="popup__form popup__form_profile" name={`${name}-form`} noValidate>
+        <form className="popup__form popup__form_profile" name={`${name}-form`} onSubmit={onSubmit} noValidate>
           {children}
-          <button className="popup__button-save popup__button-save_invalid" type="submit" disabled>
+          <button className="popup__button-save" type="submit">
             {buttonText}
           </button>
         </form>
