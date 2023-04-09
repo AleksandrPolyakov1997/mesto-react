@@ -1,6 +1,6 @@
 import React from "react";
 
-function ImagePopup({card, onClose}) {
+function ImagePopup({ card, onClose }) {
   return (
     <section className={`popup popup_big-image ${card ? 'popup_open' : ''}`}>
       <div className="popup__image-container">

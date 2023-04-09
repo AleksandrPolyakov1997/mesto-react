@@ -1,14 +1,14 @@
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 import { useEffect, useState } from 'react';
-import api from './utils/Api';
-import './index.css';
-import ImagePopup from './components/ImagePopup';
-import { CurrentUserContext } from './contexts/CurrentUserContext';
-import EditProfilePopup from './components/EditProfilePopup';
-import EditAvatarPopup from './components/EditAvatarPopup';
-import AddPlacePopup from './components/AddPlacePopup';
+import api from '../utils/Api';
+import '../index.css';
+import ImagePopup from './ImagePopup';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import EditProfilePopup from './EditProfilePopup';
+import EditAvatarPopup from './EditAvatarPopup';
+import AddPlacePopup from './AddPlacePopup';
 
 function App() {
 
@@ -55,8 +55,9 @@ function App() {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
 
     api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-    });
+      setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+    })
+      .catch(err => console.log(err))
   }
 
   const handleUpdateUser = (data) => {
@@ -115,20 +116,20 @@ function App() {
           <Footer />
 
           <EditProfilePopup
-          isOpen={isEditProfilePopupOpen}
-          onClose={closeAllPopups}
-          onUpdateUser={handleUpdateUser} />
+            isOpen={isEditProfilePopupOpen}
+            onClose={closeAllPopups}
+            onUpdateUser={handleUpdateUser} />
 
           <AddPlacePopup
-          isOpen={isAddPlacePopupOpen}
-          onClose={closeAllPopups}
-          onAddPlace={handleAddPlace}
+            isOpen={isAddPlacePopupOpen}
+            onClose={closeAllPopups}
+            onAddPlace={handleAddPlace}
           />
 
           <EditAvatarPopup
-          isOpen={isEditAvatarPopupOpen}
-          onClose={closeAllPopups}
-          onUpdateAvatar={handleUpdateAvatar} />
+            isOpen={isEditAvatarPopupOpen}
+            onClose={closeAllPopups}
+            onUpdateAvatar={handleUpdateAvatar} />
 
           <ImagePopup
             card={selectedCard}
